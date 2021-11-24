@@ -1,13 +1,13 @@
-# входим в режим управления от пользователя postgres (БД тоже postgres)
+п»ї# РІС…РѕРґРёРј РІ СЂРµР¶РёРј СѓРїСЂР°РІР»РµРЅРёСЏ РѕС‚ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ postgres (Р‘Р” С‚РѕР¶Рµ postgres)
 psql -U postgres	
-create database music_site_big; # создаем БД с именем music_site_big
-# создаем пользователя с именем <user_music> и паролем <pass_music>
-# create user user_music with password 'pass_music';
-# указываем, что владельцем БД <music_site_big>
-# является пользователь <user_music>
+create database music_site_big; # СЃРѕР·РґР°РµРј Р‘Р” СЃ РёРјРµРЅРµРј music_site_big
+# СЃРѕР·РґР°РµРј РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ СЃ РёРјРµРЅРµРј <user_music> Рё РїР°СЂРѕР»РµРј <pass_music>
+create user user_music with password 'pass_music';
+# СѓРєР°Р·С‹РІР°РµРј, С‡С‚Рѕ РІР»Р°РґРµР»СЊС†РµРј Р‘Р” <music_site_big>
+# СЏРІР»СЏРµС‚СЃСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ <user_music>
 alter database music_site_big owner to user_music;
 # -----------------
-# входим в режим управления от пользователя user_music (БД music_site_big)
+# РІС…РѕРґРёРј РІ СЂРµР¶РёРј СѓРїСЂР°РІР»РµРЅРёСЏ РѕС‚ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ user_music (Р‘Р” music_site_big)
 psql -U user_music music_site_big
 # -----------------
 CREATE TABLE Genres (

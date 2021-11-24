@@ -1,13 +1,13 @@
-# входим в режим управления от пользователя postgres (БД тоже postgres)
+п»ї# РІС…РѕРґРёРј РІ СЂРµР¶РёРј СѓРїСЂР°РІР»РµРЅРёСЏ РѕС‚ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ postgres (Р‘Р” С‚РѕР¶Рµ postgres)
 psql -U postgres	
-create database employees; # создаем БД с именем employees
-# создаем пользователя с именем <user_empl> и паролем <pass_empl>
+create database employees; # СЃРѕР·РґР°РµРј Р‘Р” СЃ РёРјРµРЅРµРј employees
+# СЃРѕР·РґР°РµРј РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ СЃ РёРјРµРЅРµРј <user_empl> Рё РїР°СЂРѕР»РµРј <pass_empl>
 create user user_empl with password 'pass_empl';
-# указываем, что владельцем БД <employees>
-# является пользователь <user_empl>
+# СѓРєР°Р·С‹РІР°РµРј, С‡С‚Рѕ РІР»Р°РґРµР»СЊС†РµРј Р‘Р” <employees>
+# СЏРІР»СЏРµС‚СЃСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ <user_empl>
 alter database employees owner to user_empl;
 # -----------------
-# входим в режим управления от пользователя user_empl (БД employees)
+# РІС…РѕРґРёРј РІ СЂРµР¶РёРј СѓРїСЂР°РІР»РµРЅРёСЏ РѕС‚ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ user_empl (Р‘Р” employees)
 psql -U user_empl employees
 # -----------------
 CREATE TABLE Departments (
